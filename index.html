@@ -32,46 +32,18 @@
 ul{list-style-type:none;}
 a{color:white;}
 body{background-color:black;}
-.c {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  margin-top: -3px;
-}
-button{border: none;
-  padding: 0; cursor: pointer;}
-#sb{
-  z-index: 1;
-  font-size: 0;
-  position: absolute;
-  width: 98%;
-  left: 50%;
-  top: 3vmin;
-  transform: translate(-50%, 0%);
-  text-align: center;
-}
-#sb input{
-  font-size: 6.4vmin;
-  font-family: sans-serif;
-  border: 0px;
-  outline: none;
-  background: transparent;
-  max-width: 75vw;
-  color:#ffffff;
-  text-align: center;
-  filter: opacity(30%);
-  vertical-align: top;
-  border-bottom: 0.5vmin solid #777777;
-}</style>
+.c{padding:0 18px;max-height:0;overflow:hidden;transition:max-height 0.2s ease-out;margin-top:-3px;}
+button{border:none;padding:0;cursor:pointer;}
+#sb{z-index:1;font-size:0;position:absolute;width:98%;left:50%;top:3vmin;transform:translate(-50%, 0%);text-align:center;}
+#sb input{font-size:6.4vmin;font-family:sans-serif;border:0px;outline:none;background:transparent;max-width:75vw;color:#ffffff;text-align:center;filter:opacity(30%);vertical-align:top;border-bottom:0.5vmin solid #777777;}</style>
 </head>
 <body style="font-family: 'Monaco', monospace;">
 <!--[if lt IE 7]>
             <p class="browsehappy">pls no old browser</p>
         <![endif]-->
-  <div id="sb">
-    <input type="text" id="searchline" onkeypress='return vk(event)' size="15" autofocus>
-  </div>
+<div id=sb>
+<input id=searchline onkeypress='return vk(event)' size=15 autofocus>
+</div>
 <div class=col>
 <button class="srufo cc"></button>
 <ul class=c>
@@ -159,7 +131,7 @@ Pulse</span></a>
 </li>
 </ul>
 <button class="srs cc"></button>
-  <ul class=c>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.reddit.com/r/psychonaut" title="immersing oneself in altered states of mind for the purpose of gaining insights into existence"><span title="">r/psychonaut</span></a>
 </li>
@@ -227,7 +199,7 @@ Pulse</span></a>
 </div>
 <div class=col>
 <button class="sri cc"></button>
-<ul class="c">
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="http://lit.eco" title="top notch all-in-one community"><span title="">Lit</span></a>
 </li>
@@ -495,43 +467,9 @@ Pulse</span></a>
 </li>
 </ul>
 </div>
-<script>var coll = document.getElementsByClassName("cc");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var c = this.nextElementSibling;
-    if (c.style.maxHeight){
-      c.style.maxHeight = null;
-      c.style.overflow = "hidden";
-    } else {
-      c.style.maxHeight = c.scrollHeight + "px";
-      c.style.overflow = "visible";
-    } 
-  });
-  function vk(e) {
-      var keycode;
-      if (window.event) {
-          keycode = window.event.keyCode;
-      } else if (e) {
-          keycode = e.which;
-      }
-      if (keycode === 13) {
-          ip();
-      }
-  }
-  function ip() {
-      var ib = document.getElementById('searchline');
-      ib.select();
-      var input = ib.value.trim();
-      if (input === ''){
-        return;
-      }
-          window.open('https://duckduckgo.com' + '/?q=' + input);
-          ib.value = '';
-          return false;
-  }
-}</script>
+<script>var coll=document.getElementsByClassName("cc");var i;for(i=0;i<coll.length;i++){coll[i].addEventListener("click",function(){this.classList.toggle("active");var c=this.nextElementSibling;if(c.style.maxHeight){c.style.maxHeight=null;c.style.overflow="hidden";}else{c.style.maxHeight=c.scrollHeight+"px";c.style.overflow="visible";}});function vk(e){var keycode;if(window.event){keycode=window.event.keyCode;}else if(e){keycode=e.which;}
+if(keycode===13){ip();}}
+function ip(){var ib=document.getElementById('searchline');ib.select();var input=ib.value.trim();if(input===''){return;}
+window.open('https://duckduckgo.com'+'/?q='+input);ib.value='';return false;}}</script>
 </body>
 </html>
