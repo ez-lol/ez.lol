@@ -28,18 +28,53 @@
 .tooltip{display:inline;position:relative;}
 .tooltip:hover:after{background:#333;background:rgba(0, 0, 0, .8);border-radius:5px;bottom:26px;color:#fff;content:attr(title);left:20%;padding:5px 15px;position:absolute;z-index:98;width:220px;}
 .tooltip:hover:before{border:solid;border-color:#333 transparent;border-width:6px 6px 0 6px;bottom:20px;content:"";left:50%;position:absolute;z-index:99;}
-.col{float:left;word-wrap:break-word;text-align:center;width:30%;}
+.col{float:left;word-wrap:break-word;text-align:center;width:33%;padding-top:15%;}
 ul{list-style-type:none;}
 a{color:white;}
-body{background-color:black;}</style>
+body{background-color:black;}
+.c {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-top: -3px;
+}
+button{border: none;
+  padding: 0; cursor: pointer;}
+#sb{
+  z-index: 1;
+  font-size: 0;
+  position: absolute;
+  width: 98%;
+  left: 50%;
+  top: 3vmin;
+  transform: translate(-50%, 0%);
+  text-align: center;
+}
+#sb input{
+  font-size: 6.4vmin;
+  font-family: sans-serif;
+  border: 0px;
+  outline: none;
+  background: transparent;
+  max-width: 75vw;
+  color:#ffffff;
+  text-align: center;
+  filter: opacity(30%);
+  vertical-align: top;
+  border-bottom: 0.5vmin solid #777777;
+}</style>
 </head>
 <body style="font-family: 'Monaco', monospace;">
 <!--[if lt IE 7]>
             <p class="browsehappy">pls no old browser</p>
         <![endif]-->
+  <div id="sb">
+    <input type="text" id="searchline" onkeypress='return vk(event)' size="15" autofocus>
+  </div>
 <div class=col>
-<ul>
-<li class=srufo style="margin-top:10px;"></li>
+<button class="srufo cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="http://www.ipher.org/~visionquest/home.html" title="collective evolution deluxe"><span title="">WMS</span></a>
 </li>
@@ -86,7 +121,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="http://www.multidimensionalman.com" title="astral travel and life after death"><span title="">Multidimensional man</span></a>
 </li>
-<li class=sru style="margin-top:10px;"></li>
+</ul>
+<button class="sru cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href=ane.pdf title="awakening to your life's purpose, pirated from Eckhart Tolle, buy his works if you like it"><span title="">A new earth</span></a>
 </li>
@@ -109,12 +146,20 @@ Pulse</span></a>
 <a class=tooltip target=_blank rel="noopener noreferrer" href=pr.pdf title="a guide book of how to get from here to there pirated from Robert Anton Wilson, support the author and buy his works if you like it"><span title="">Prometheus rising</span></a>
 </li>
 <li>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://is.muni.cz/el/1423/podzim2013/SOC932/um/43553173/FERRISS_Timothy_-_The_4-Hour_Workweek.pdf" title="pirated from tim ferris, support him if you like it"><span title="">The 4-Hour Workweek</span></a>
+</li>
+<li>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="http://4motivi.com/books/hill/grow.pdf" title="success 101"><span title="">Think and grow rich</span></a>
+</li>
+<li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href=plr.pdf title="pirated from alchemyrealm.com, support the author and buy his works if you like it"><span title="">Past life regression</span></a>
 </li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href=mdb.pdf title="pirated from alchemyrealm.com, support the author and buy his works if you like it"><span title="">Multi dimensional being</span></a>
 </li>
-<li class=srs style="margin-top:10px;"></li>
+</ul>
+<button class="srs cc"></button>
+  <ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.reddit.com/r/psychonaut" title="immersing oneself in altered states of mind for the purpose of gaining insights into existence"><span title="">r/psychonaut</span></a>
 </li>
@@ -128,12 +173,17 @@ Pulse</span></a>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.erowid.org/" title="the complex relationship between humans and psychoactives"><span title="">Erowid</span></a>
 </li>
 <li>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://examine.com/" title="nutrition and supplement information based on science"><span title="">Examine</span></a>
+</li>
+<li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://psychonautwiki.org" title="the field of psychonautics in a legitimate and comprehensive manner"><span title="">PsychonautWiki</span></a>
 </li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.bibliotecapleyades.net/" title="library of suppressed knowledge"><span title="">Biblioteca pleyades</span></a>
 </li>
-<li class=srm style="margin-top:10px;"></li>
+</ul>
+<button class="srm cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.reddit.com/r/DeezloadersIsBack/" title="download music in top quality"><span title="">Deezloader</span></a>
 </li>
@@ -146,9 +196,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://open.spotify.com/user/ibhpi1e5pd01cds9rjo50yo8b/playlist/35dfl6nMSvt9jmP6ayWKNq" title="mixed spotify playlist"><span title="">Spotify playlist</span></a>
 </li>
-<li class=srr style="cursor:pointer;margin-top:10px;" onclick="ra()"></li>
 </ul>
-<ul id=rr style="display:none;margin-top:-15px;">
+<button class="srr cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://boards.4chan.org/b/" title="where the world's most powerful yet disturbed minds go to roam and contaminate"><span title="">/b/</span></a>
 </li>
@@ -176,8 +226,8 @@ Pulse</span></a>
 </ul>
 </div>
 <div class=col>
-<ul>
-<li class=sri style="margin-top:10px;"></li>
+<button class="sri cc"></button>
+<ul class="c">
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="http://lit.eco" title="top notch all-in-one community"><span title="">Lit</span></a>
 </li>
@@ -224,9 +274,6 @@ Pulse</span></a>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.duolingo.com/" title="the world's best way to learn a language"><span title="">Duolingo</span></a>
 </li>
 <li>
-<a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.spreeder.com/" title="read fast, one word at the time"><span title="">Spreeder</span></a>
-</li>
-<li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://prism-break.org/en/" title="opt out of global surveillance"><span title="">Prism break</span></a>
 </li>
 <li>
@@ -238,7 +285,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.bleepingcomputer.com/" title="computer support deluxe"><span title="">BleepingComputer</span></a>
 </li>
-<li class=srg style="margin-top:10px;"></li>
+</ul>
+<button class="srg cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://n26.com/r/danielk8374" title="free card + €15 free"><span title="">N26</span></a>
 </li>
@@ -257,13 +306,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.crowdfunding.com/" title="the practice of funding a project or venture by raising many small amounts of money from a large number of people"><span title="">Crowdfunding</span></a>
 </li>
-<li>
-<a class=tooltip target=_blank rel="noopener noreferrer" href="https://is.muni.cz/el/1423/podzim2013/SOC932/um/43553173/FERRISS_Timothy_-_The_4-Hour_Workweek.pdf" title="pirated from tim ferris, support him if you like it"><span title="">The 4-Hour Workweek</span></a>
-</li>
-<li>
-<a class=tooltip target=_blank rel="noopener noreferrer" href="http://4motivi.com/books/hill/grow.pdf" title="success 101"><span title="">Think and grow rich</span></a>
-</li>
-<li class=sro style="margin-top:10px;"></li>
+</ul>
+<button class="sro cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://wirexapp.com/" title="crypto visa card"><span title="">Wirex</span></a>
 </li>
@@ -274,7 +319,13 @@ Pulse</span></a>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://duckdice.com/a9e123d9e3" title="the fastest dice betting site with free crypto faucets"><span title="">DuckDice</span></a>
 </li>
 <li>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://blockmodo.com" title="realtime crypto prices, charts, news, stats and more"><span title="">Blockmodo</span></a>
+</li>
+<li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://platinum.crypto.com/r/fgnbolpbnd" title="$50 free & lots of ways to make bank"><span title="">Crypto.com</span></a>
+</li>
+<li>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://blockstack.org" title="decentralized computing network and app ecosystem"><span title="">Blockstack</span></a>
 </li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://cryptopanic.com/" title="crypto news aggregator"><span title="">CryptoPanic</span></a>
@@ -291,7 +342,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://discordcryptogroups.com" title="crypto communities"><span title="">DiscordCryptoGroups</span></a>
 </li>
-<li class=srsat style="margin-top:10px;"></li>
+</ul>
+<button class="srsat cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://ifttt.com/" title="connect & automate stuff"><span title="">IFTTT</span></a>
 </li>
@@ -301,15 +354,17 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.inoreader.com/" title="be on top of everything"><span title="">Inoreader</span></a>
 </li>
-<li class=sre style="margin-top:10px;"></li>
+</ul>
+<button class="sre cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="http://www.moneylesssociety.com/" title=yes><span title="">Moneyless society</span></a>
 </li>
 </ul>
 </div>
 <div class=col>
-<ul>
-<li class=srp style="margin-top:10px;"></li>
+<button class="srp cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://wwv.solarmovie.one/" title="watch movies and tv shows for free"><span title="">Solarmovie</span></a>
 </li>
@@ -328,7 +383,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.youtube.com/channel/UCK1RXKe1yP15tsGdyw2YetQ" title="superb youtube collection"><span title="">YouTube collection</span></a>
 </li>
-<li class=sra style="margin-top:10px;"></li>
+</ul>
+<button class="sra cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.airbnb.com/c/danielk56813" title="free $50 on a marketplace to list, discover, and book unique accommodations around the world"><span title="">Airbnb</span></a>
 </li>
@@ -347,7 +404,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.cryptocribs.com/" title="travel the globe, pay in crypto"><span title="">CryptoCribs</span></a>
 </li>
-<li class=srd style="margin-top:10px;"></li>
+</ul>
+<button class="srd cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://shoppy.gg/@eeez" title="buy digital goods"><span title="">Shop</span></a>
 </li>
@@ -360,7 +419,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://stacksocial.com?aid=a-z1cm7bef&rid=8127905" title="store with nice tech deals"><span title="">StackSocial</span></a>
 </li>
-<li class=srh style="margin-top:10px;"></li>
+</ul>
+<button class="srh cc"></button>
+<ul class=c>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.fakenamegenerator.com/" title="generate a fake name"><span title="">FNG</span></a>
 </li>
@@ -382,7 +443,9 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://hackforums.net/" title="1337 hacking"><span title="">Hackforums</span></a>
 </li>
-<li class=srswe style="margin-top:10px;"></li>
+</ul>
+<button class="srswe cc"></button>
+<ul class=c>
 <li class=src></li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://paf.se" title="100 spänn & 25 freespins gratis utan krav"><span title="">Paf</span></a>
@@ -396,7 +459,7 @@ Pulse</span></a>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.banknorwegian.se/Varva/UEAIWIU2" title="bonus på kortet"><span title="">Bank Norwegian</span></a>
 </li>
-<li class=srx style="margin-top:10px;"></li>
+<li class=srx></li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://c3d.se/?mref=ez" title="3D-printing webbshop & community"><span title="">C3D</span></a>
 </li>
@@ -432,6 +495,43 @@ Pulse</span></a>
 </li>
 </ul>
 </div>
-<script>function ra(){var x=document.getElementById("rr");if(x.style.display==="none"){x.style.display="block";}else{x.style.display="none";}}</script>
+<script>var coll = document.getElementsByClassName("cc");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var c = this.nextElementSibling;
+    if (c.style.maxHeight){
+      c.style.maxHeight = null;
+      c.style.overflow = "hidden";
+    } else {
+      c.style.maxHeight = c.scrollHeight + "px";
+      c.style.overflow = "visible";
+    } 
+  });
+  function vk(e) {
+      var keycode;
+      if (window.event) {
+          keycode = window.event.keyCode;
+      } else if (e) {
+          keycode = e.which;
+      }
+      if (keycode === 13) {
+          ip();
+      }
+  }
+  function ip() {
+      var ib = document.getElementById('searchline');
+      ib.select();
+      var input = ib.value.trim();
+      if (input === ''){
+        return;
+      }
+          window.open('https://duckduckgo.com' + '/?q=' + input);
+          ib.value = '';
+          return false;
+  }
+}</script>
 </body>
 </html>
