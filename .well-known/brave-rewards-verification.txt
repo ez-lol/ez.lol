@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: ez.lol
-Token: 99405986853f144fd1520c1e6f62ce40205c263a1068a42338739027165dd8fe
