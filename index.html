@@ -32,7 +32,7 @@
 ul{list-style-type:none;}
 a{color:white;cursor:pointer;}
 body{background-color:black;}
-.c{padding:0 18px;max-height:0;overflow:hidden;transition:max-height 0.2s ease-out;margin-top:-3px;}
+.c{padding:0 2px;max-height:0;overflow:hidden;transition:max-height 0.2s ease-out;margin-top:-3px;}
 #sb{z-index:1;font-size:0;position:absolute;width:98%;left:50%;top:3vmin;transform:translate(-50%, 0%);text-align:center;}
 #sb input{font-size:6.4vmin;font-family:sans-serif;border:0px;outline:none;background:transparent;max-width:75vw;color:#ffffff;text-align:center;filter:opacity(30%);vertical-align:top;border-bottom:0.5vmin solid #777777;}</style>
 </head>
@@ -529,7 +529,7 @@ Pulse</span></a>
 </li>
 </ul>
 </div>
-<script>var coll=document.getElementsByClassName("cc");var i;for(i=0;i<coll.length;i++){coll[i].addEventListener("click",function(){this.classList.toggle("active");var c=this.nextElementSibling;if(c.style.maxHeight){c.style.maxHeight=null;c.style.overflow="hidden";}else{c.style.maxHeight=c.scrollHeight+"px";c.style.overflow="visible";}});function vk(e){var keycode;if(window.event){keycode=window.event.keyCode;}else if(e){keycode=e.which;}
+<script>var coll=document.getElementsByClassName("cc");var i;for(i=0;i<coll.length;i++){coll[i].addEventListener("click",function(){this.classList.toggle("active");var c=this.nextElementSibling;function ti() {setTimeout(function(){ c.style.overflow="visible"; }, 200);}if(c.style.maxHeight){c.style.maxHeight=null;c.style.overflow="hidden";}else{c.style.maxHeight=c.scrollHeight+"px";ti();}});function vk(e){var keycode;if(window.event){keycode=window.event.keyCode;}else if(e){keycode=e.which;}
 if(keycode===13){ip();}}
 function ip(){var ib=document.getElementById('sl');ib.select();var input=ib.value.trim();if(input===''){return;}
 window.open('https://duckduckgo.com'+'/?q='+input);ib.value='';return false;}}</script>
