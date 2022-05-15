@@ -53,7 +53,6 @@ body::-webkit-scrollbar {display: none;}
 #sb input{font-size:6.4vmin;font-family:sans-serif;border:0px;outline:none;background:transparent;max-width:75vw;color:#ffffff;text-align:center;filter:opacity(30%);vertical-align:top;border-bottom:0.5vmin solid #777777;}
 @media(max-width: 455px){body {font-size: 0.81em;}}
 </style>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -391,18 +390,10 @@ window.open('https://duckduckgo.com'+'/?q='+input);ib.value='';return false;}}
   <script>
   	var coll=document.getElementsByClassName("xd");var i;for(i=0;i<coll.length;i++){coll[i].addEventListener("click",function(){this.classList.toggle("active");var c=this.nextElementSibling;function ti(){setTimeout(function(){c.style.overflow="visible";},200);}if(confirm("warning") || c.style.maxHeight){c.style.maxHeight=c.scrollHeight+"px";ti();}else{c.style.maxHeight=null;c.style.overflow="hidden";}})}
   </script>
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
- <script type="text/javascript">Toastify({
-  text: "🍉",
-  duration: 10000,
-  destination: "pls",
-  newWindow: true,
-  gravity: "bottom",
-  position: "right",
-  stopOnFocus: true,
-  style: {
-    background: "none",
-  },
-}).showToast();</script>
+<div id="pz" style="position: fixed;bottom: 15px;right: 15px;"><a target=_blank rel="noopener noreferrer" href="pls">🍉</a></div>
+<script type="text/javascript">
+window.setTimeout("cs();", 10000);
+function cs(){document.getElementById("pz").style.display="none";}
+</script>
 </body>
 </html>
