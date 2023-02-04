@@ -433,5 +433,13 @@ for(i=0;i<coll.length;i++){
   </script>
 <div id="pz" style="position:fixed;bottom:15px;right:15px;"><a target=_blank rel="noopener noreferrer" href="pls">🍉</a></div>
 <script type="text/javascript">window.setTimeout("cs();", 10000);function cs(){document.getElementById("pz").style.display="none";}</script>
+<div id="cursor-chat-layer">
+    <input type="text" id="cursor-chat-box">
+  </div>
+  <script type="module">
+    import { initCursorChat } from 'https://esm.sh/cursor-chat'
+    initCursorChat("ez")
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/cursor-chat/dist/style.css"/>
 </body>
 </html>
