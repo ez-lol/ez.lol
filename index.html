@@ -405,7 +405,7 @@ body::-webkit-scrollbar {display: none;}
 <div id="cursor-chat-layer">
   <input type="text" id="cursor-chat-box" maxlength="25">
 </div>
-<script>var coll=document.getElementsByClassName("cc");for(var i=0;i<coll.length;i++){coll[i].addEventListener("click",handleToggle);}function handleToggle(){for(var el of coll){if(el!==this){el.classList.remove("active");el.nextElementSibling.style.maxHeight=null;}}this.classList.toggle("active");var content=this.nextElementSibling;content.style.maxHeight=content.style.maxHeight?null:content.scrollHeight+"px";}</script>
+<script>var coll=document.getElementsByClassName("cc");var i;for(i=0;i<coll.length;i++){coll[i].addEventListener("click",throttle(handleToggle, 200));}function handleToggle(){this.classList.toggle("active");var c=this.nextElementSibling;if(c.style.maxHeight){c.style.maxHeight=null;c.style.overflow="hidden";}else{c.style.maxHeight=c.scrollHeight+"px";setTimeout(function(){c.style.overflow="visible";},200);}}function throttle(func, limit){var lastCall=0;return function(){var now=Date.now();if(now-lastCall>=limit){func.apply(this,arguments);lastCall=now;}};}</script>
 <script>
   if (typeof navigator.serviceWorker !== 'undefined') {
     navigator.serviceWorker.register('sw.js')
