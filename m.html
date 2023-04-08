@@ -9,7 +9,13 @@
 <meta content="the ez way to make bank" name=description>
 <meta content="width=device-width, initial-scale=1" name=viewport>
 <link href=favicon.ico rel=icon>
-<style>body{font-family:'Monaco', monospace;text-align:center;background-color:black;color:white;}@media(max-width: 455px){body {font-size: 0.81em;}}</style>
+<style>body{font-family:'Monaco', monospace;text-align:center;background-color:black;color:white;}@media(max-width: 455px){body {font-size: 0.81em;}}
+#s {cursor: pointer;font-size: 32px;}
+#s:hover{transform: translateY(-3px);transition: 0.3s;}
+  .ic { opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; }
+  .ic.visible { opacity: 1; pointer-events: all; }
+  .fa-icon { color: white; margin-right: 12px; transition: 0.3s; font-size: 24px; }
+  .fa-icon:hover { transform: translateY(-3px); }</style>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 </head>
@@ -20,15 +26,41 @@
 <p>visiting / sending visitors to the links on <a href="c">this page</a> and documenting your efforts also yields great rewards</p>
 <p style="font-weight:bold;">the greater the effort, the greater the reward</p>
 <p>example of great effort:</p> <img src=e.jpg>
-<p>the ez way is to click all the buttons below</p>
- <div class="socializer" data-features="32px,circle,float,icon-white,bg-none,pad" data-sites="facebook,twitter,email,reddit,telegram,whatsapp,pinterest,hackernews" data-meta-link="https://ez.lol" data-meta-title="the most professional website" data-text="hover"></div>
-<p style="font-style:italic;"><a href="https://ez.business">merch</a> is also considered great effort</p>
-<script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js"></script>
+<p>the ez way is to click the button(s) below</p>
+<i id="s" class="fa fa-share-alt" style="color: white;"></i>
 <script>
-(function(){
-    socializer( '.socializer' );
-}());
+  document.getElementById('s').addEventListener('click', () => {
+    const u = "https://ez.lol";
+    const t = "the most professional website";
+    if (navigator.share) {
+      navigator.share({ title: t, text: t, url: u })
+        .then(() => console.log('success'))
+        .catch(() => console.log('error'));
+    } else {
+      let f = document.querySelector('.ic');
+      if (f) {
+        f.classList.toggle('visible');
+      } else {
+        const p = [
+          { id: 'fb', icon: 'fab fa-facebook-f', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+          { id: 'tw', icon: 'fab fa-twitter', href: `https://twitter.com/intent/tweet?text=${t}&url=${u}` },
+          { id: 'em', icon: 'fas fa-envelope', href: `mailto:?subject=${t}&body=${u}` },
+          { id: 'rd', icon: 'fab fa-reddit-alien', href: `https://www.reddit.com/submit?url=${u}&title=${t}` },
+          { id: 'tg', icon: 'fab fa-telegram-plane', href: `https://t.me/share/url?url=${u}&text=${t}` },
+          { id: 'wa', icon: 'fab fa-whatsapp', href: `https://api.whatsapp.com/send?text=${t}%20${u}` },
+          { id: 'pt', icon: 'fab fa-pinterest-p', href: `https://pinterest.com/pin/create/button/?url=${u}&description=${t}` },
+          { id: 'hn', icon: 'fab fa-hacker-news-square', href: `https://news.ycombinator.com/submitlink?u=${u}&t=${t}` },
+        ];
+        f = document.createElement('div');
+        f.classList.add('ic');
+        f.innerHTML = p.map(i => `<a href="${i.href}" onclick="window.open(this.href, 'share', 'width=640,height=480'); return false;"><i class="${i.icon} fa-icon"></i></a>`).join('');
+        document.body.appendChild(f);
+        setTimeout(() => f.classList.add('visible'), 100);
+      }
+    };
+  });
 </script>
+<p style="font-style:italic; font-size: x-small;">(physical <a href="https://ez.business">merch</a> is also considered great effort)</p>
 <script src="https://form.jotform.com/cardforms/feedbackEmbedButton.min.js"></script> <script> new JF_FeedbackEmbedButton({ buttonText: "showcase efforts", buttonFontColor: "#FFFFFF", buttonBackgroundColor: "#08036b", buttonSide: "Bottom", buttonAlign: "Right", buttonIcon: "envelope", base: "https://form.jotform.com/", formId: 210189014917050 }); </script>
 </body>
 </html>
