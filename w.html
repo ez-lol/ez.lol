@@ -9,19 +9,60 @@
 <meta content="the ez way" name=description>
 <meta content="width=device-width, initial-scale=1" name=viewport>
 <link href=favicon.ico rel=icon>
-<style>body{font-family:'Monaco', monospace;text-align:center;background-color:black;color:white;max-width:900px;margin-left:auto;margin-right:auto;}@media(max-width: 455px){body {font-size: 0.81em;}}</style>
+<style>body{font-family:'Monaco', monospace;text-align:center;background-color:black;color:white;max-width:900px;margin-left:auto;margin-right:auto;}@media(max-width: 455px){body {font-size: 0.81em;}}
+#s {cursor: pointer;font-size: 32px;}
+#s:hover{transform: translateY(-3px);transition: 0.3s;}
+  .ic { opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; }
+  .ic.visible { opacity: 1; pointer-events: all; }
+  .fa-icon { color: white; margin-right: 12px; transition: 0.3s; font-size: 24px; }
+  .fa-icon:hover { transform: translateY(-3px); }</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 </head>
 <body>
 <h1>the ez way</h1>
-<img src="192.png" alt="ez">
-<p>micromanaging strict rules, country borders, social identities, etc. is an impossible task that only fools would attempt</p>
-<p>the ez way is simply to use common sense and to view rules as general guidelines for what is considered socially acceptable, depending on the context</p>
-<p>people who know the ez way have a sense of honor that is not to be messed with, unless you desire eternal suffering</p>
+<a href="https://ez.lol"><img src="192.png" alt="ez"></a>
+<p>micromanaging strict rules, country borders, social identities, etc. is an impossible task that only fools would attempt.</p>
+<p>the ez way is simply to use common sense and to view rules as general guidelines for what is considered socially acceptable, depending on the context.</p>
+<p>people who know the ez way have a sense of honor that is not to be messed with, unless you desire eternal suffering.</p>
 <br>
 <p style="font-style:italic;">what about criminals and idiots?</p>
-<p>criminals punish themselves in their own criminal acts by eradicating their sense of honor</p>
-<p>if you have a sense of awareness, you can immediately tell if someone is out of touch or in touch with the ez way and respond accordingly</p>
-<br>
+<p>criminals punish themselves in their own criminal acts by eradicating their sense of honor.</p>
+<p>when you're in touch with the ez way, you can immediately tell if someone is out of touch or in touch with the ez way and respond accordingly.</p>
 <p>ez</p>
+<br>
+<p>click the button(s) below to share this page</p>
+<i id="s" class="fa fa-share-alt" style="color: white;"></i>
+<script>
+  document.getElementById('s').addEventListener('click', () => {
+    const u = "https://ez.lol/w";
+    const t = "the ez way";
+    if (navigator.share) {
+      navigator.share({ title: t, text: t, url: u })
+        .then(() => console.log('success'))
+        .catch(() => console.log('error'));
+    } else {
+      let f = document.querySelector('.ic');
+      if (f) {
+        f.classList.toggle('visible');
+      } else {
+        const p = [
+          { id: 'fb', icon: 'fab fa-facebook-f', href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+          { id: 'tw', icon: 'fab fa-twitter', href: `https://twitter.com/intent/tweet?text=${t}&url=${u}` },
+          { id: 'em', icon: 'fas fa-envelope', href: `mailto:?subject=${t}&body=${u}` },
+          { id: 'rd', icon: 'fab fa-reddit-alien', href: `https://www.reddit.com/submit?url=${u}&title=${t}` },
+          { id: 'tg', icon: 'fab fa-telegram-plane', href: `https://t.me/share/url?url=${u}&text=${t}` },
+          { id: 'wa', icon: 'fab fa-whatsapp', href: `https://api.whatsapp.com/send?text=${t}%20${u}` },
+          { id: 'pt', icon: 'fab fa-pinterest-p', href: `https://pinterest.com/pin/create/button/?url=${u}&description=${t}` },
+          { id: 'hn', icon: 'fab fa-hacker-news-square', href: `https://news.ycombinator.com/submitlink?u=${u}&t=${t}` },
+        ];
+        f = document.createElement('div');
+        f.classList.add('ic');
+        f.innerHTML = p.map(i => `<a href="${i.href}" onclick="window.open(this.href, 'share', 'width=640,height=480'); return false;"><i class="${i.icon} fa-icon"></i></a>`).join('');
+        document.body.appendChild(f);
+        setTimeout(() => f.classList.add('visible'), 100);
+      }
+    };
+  });
+</script>
 </body>
 </html>
