@@ -36,7 +36,7 @@
 .srd{background:url('img/ss.png') -610px -0px;width:42px;height:42px;display:inline-block;}
 .sre{background:url('img/ss.png') -652px -0px;width:42px;height:42px;display:inline-block;}
 .tooltip{display:inline;position:relative;}
-.tooltip:hover:after{background:#333;background:rgba(0,0,0,.8);border-radius:5px;bottom:26px;color:#fff;content:attr(title);left:20%;padding:5px 15px;position:absolute;z-index:98;width:220px;}
+.tooltip:hover:after{background:#333;background:rgba(0,0,0,.8);border-radius:5px;bottom:26px;color:#fff;content:attr(title);left:20%;padding:5px 15px;position:absolute;z-index:98;width:220px;left: calc(0px - var(--s, 0px));}
 .tooltip:hover:before{border:solid;border-color:#333 transparent;border-width:6px 6px 0 6px;bottom:20px;content:"";left:50%;position:absolute;z-index:99;}
 .col{float:left;word-wrap:break-word;text-align:center;width:33%;padding-top:15%;}
 ul{list-style-type:none;}
@@ -343,7 +343,7 @@ body::-webkit-scrollbar{display:none;}
 <a href="#!" aria-label="business" class="srd cc"></a>
 <ul class=c>
 <li>
-<a class=tooltip target=_blank rel="noopener noreferrer" href="https://ez.business" title="the most professional business"><span title="">⭐ Business</span></a>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://ez.business" title="the most professional business"><span title="">⭐ ez.business</span></a>
 </li>
 <li>
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.fiverr.com/professionalest" title="the most professional fiverr"><span title="">🏬 Fiverr</span></a>
@@ -415,7 +415,7 @@ body::-webkit-scrollbar{display:none;}
 <a class=tooltip target=_blank rel="noopener noreferrer" href="https://www.fritidsbanken.se/" title="sport och friluftsutrustning"><span title="">⚽ Fritidsbanken</span></a>
 </li>
 <li>
-<a class=tooltip target=_blank rel="noopener noreferrer" href="https://basen.speleo.se/" title="grottor i sverige"><span title="">🍙 Grottdatabasen</span></a>
+<a class=tooltip target=_blank rel="noopener noreferrer" href="https://basen.speleo.se/" title="grottor"><span title="">🍙 Grottdatabasen</span></a>
 </li>
 </ul>
 </div>
@@ -424,5 +424,6 @@ body::-webkit-scrollbar{display:none;}
 <div id="pz" style="position:fixed;bottom:15px;right:15px;"><a target=_blank rel="noopener noreferrer" href="pls">🍉</a></div>
 <script type="text/javascript">window.setTimeout("cs();", 10000);function cs(){document.getElementById("pz").style.display="none";}</script>
 <script>let li=null;const th=(f,l)=>{let t;return(...a)=>{if(!t){f(...a);t=setTimeout(()=>{t=undefined;},l);}}};const rl=th(()=>{let a=document.querySelectorAll('a.cc'),id;do{id=Math.floor(Math.random()*a.length);}while(id===li&&a.length>1);li=id; a.length && a[id].click();},200);</script>
+<script>window.onload = function() { document.querySelectorAll('.tooltip').forEach(t => { t.onmouseover = function() { let a = window.getComputedStyle(t, ':after'), w = parseFloat(a.width), l = t.getBoundingClientRect().left, o = 10; l + w > window.innerWidth ? t.style.setProperty("--s", l + w - window.innerWidth + o + "px") : l < 0 ? t.style.setProperty("--s", -l + o + "px") : t.style.setProperty("--s", "0px"); }}); };</script>
 </body>
 </html>
