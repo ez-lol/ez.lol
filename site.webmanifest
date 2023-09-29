@@ -3,17 +3,17 @@
   "short_name": "ez.lol",
   "icons": [
     {
-      "src": "/192.png",
+      "src": "/img/192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/512.png",
+      "src": "/img/512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/m.png",
+      "src": "/img/m.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
